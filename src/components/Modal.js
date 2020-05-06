@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { Dialog } from '@reach/dialog';
+import { Dialog } from '@reach/dialog';
 import VisuallyHidden from '@reach/visually-hidden';
 import { Icon } from 'react-icons-kit';
 import { x as xIcon } from 'react-icons-kit/feather/x';
@@ -37,7 +37,7 @@ const CloseButton = styled(UnstyledButton)`
   align-items: center;
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled(Dialog)`
   &[data-reach-dialog-content] {
     position: relative;
     color: black;
