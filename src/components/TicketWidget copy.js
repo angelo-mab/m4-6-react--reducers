@@ -8,17 +8,14 @@ import { range } from '../utils';
 import Seat from './Seat';
 import { SeatContext } from './SeatContext';
 
-const TicketWidget = () => {
-  // const numOfRows = 6;
-  // const seatsPerRow = 6;
-
-  // TODO: implement the loading spinner <CircularProgress />
-  // with the hasLoaded flag
+function TicketWidget() {
   const {
     state: { hasLoaded, seats, numOfRows, seatsPerRow },
   } = React.useContext(SeatContext);
 
-  if (!hasLoaded) return <CircularProgress />;
+  if (!hasLoaded) {
+    return <CircularProgress />;
+  }
 
   return (
     <Wrapper>
@@ -50,7 +47,7 @@ const TicketWidget = () => {
       })}
     </Wrapper>
   );
-};
+}
 
 const Wrapper = styled.div`
   background: #eee;
@@ -69,7 +66,16 @@ const Row = styled.div`
 `;
 
 const RowLabel = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  transform: translateX(calc(-100% - 30px));
+  font-size: 14px;
+  color: white;
   font-weight: bold;
+  line-height: 46px;
 `;
 
 const SeatWrapper = styled.div`
